@@ -1,0 +1,42 @@
+# Hecho por JavierGG
+# Todos los derechos reservados
+# Comunicador con SimuladorDeVida
+
+datosConexion:
+  driver: com.mysql.jdbc.Driver
+  conexion: jdbc:mysql://
+  hostname: localhost
+  port: 3306
+  database: PluginMc
+  options: ?useSSL=false
+
+  #url =  + hostname + : + port + / + database + ?useSSL=false
+  username: root
+  password: 
+
+
+
+items:
+  madera:
+    - ACACIA_LOG
+    - 10
+    - BIRCH_LOG
+    - 20
+  tela:
+    - STRING
+    - 20
+  piedra:
+    - STONE
+    - 15
+  agua:
+    - WATER_BUCKET
+    - 5
+  petroleo:
+    - LAVA_BUCKET
+    - 200
+  comida:
+    - APPLE
+    - 1
+
+
+

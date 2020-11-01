@@ -1,0 +1,14 @@
+
+version: 1.0
+name: SimuladorVida
+main: com.Javiergg.simuladorVida.Principal
+author: javiergg
+desription: Comunica recursos entre Minecraft Y Simulador de vida
+api-version: 1.16
+commands:
+
+  transaccion:
+    description: Con el item en la mano puedes transferirlo a SDV
+
+
+
