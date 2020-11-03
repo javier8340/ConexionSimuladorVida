@@ -13,17 +13,18 @@ public class reload implements CommandExecutor {
         if (commandSender instanceof Player){
             Player player = (Player) commandSender;
             if (player.isOp()){
-                recargar();
+                recargar(player);
             }
         }else{
-            recargar();
+            recargar(commandSender);
         }
         return false;
 
 
     }
-private void recargar(){
-    Principal.get().onEnable();
+private void recargar(CommandSender p){
+        Principal.get().recarga();
+        p.sendMessage("Plugin reiniciado");
 }
 
 }

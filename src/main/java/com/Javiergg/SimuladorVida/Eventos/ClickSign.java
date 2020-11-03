@@ -27,7 +27,7 @@ public class ClickSign implements Listener {
                 || mat.equals(Material.DARK_OAK_WALL_SIGN) || mat.equals(Material.JUNGLE_WALL_SIGN) || mat.equals(Material.OAK_WALL_SIGN)
                 || mat.equals(Material.WARPED_WALL_SIGN)){
             Sign s = (Sign) event.getClickedBlock().getState();
-            if (s.getLine(0).toLowerCase().equals("[transaccion]")){
+            if (s.getLine(0).toLowerCase().equals("[canjearapcu]")){
                 player.performCommand("transaccion");
             }
         }

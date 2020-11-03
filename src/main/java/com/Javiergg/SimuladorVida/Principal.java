@@ -8,6 +8,7 @@ import com.Javiergg.SimuladorVida.core.Item;
 import com.Javiergg.SimuladorVida.core.DatosArchivo;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -30,6 +31,7 @@ public class Principal extends JavaPlugin {
 
     @Override
     public void onEnable(){
+
         Principal.plugin = this;
         registerConfig();
         registerCommands();
@@ -53,6 +55,17 @@ public class Principal extends JavaPlugin {
 
     }
 
+    public void recarga(){
+        File config = new File(this.getDataFolder(), "config.yml");
+        rutaConfig = config.getPath();
+//        registerConfig();
+        registerCommands();
+        registerConfig();
+        registerEvents();
+        FileConfiguration file = YamlConfiguration.loadConfiguration(config);
+        conexion = null;
+        conexion = new DatosArchivo(file);
+    }
     public void registerCommands(){
 
         this.getCommand("transaccion").setExecutor(new TransacctionCommand());
