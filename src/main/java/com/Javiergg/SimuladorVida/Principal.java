@@ -46,8 +46,10 @@ public class Principal extends JavaPlugin {
     }
 
     public void recarga(){
+        items = new ArrayList<>();
         File config = new File(this.getDataFolder(), "config.yml");
         rutaConfig = config.getPath();
+
 //        registerConfig();
         registerCommands();
         registerConfig();
