@@ -53,7 +53,7 @@ public class Principal extends JavaPlugin {
 //        registerConfig();
         registerCommands();
         registerConfig();
-        registerEvents();
+
         FileConfiguration file = YamlConfiguration.loadConfiguration(config);
         conexion = null;
         conexion = new DatosArchivo(file);
