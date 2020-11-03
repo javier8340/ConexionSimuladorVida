@@ -1,5 +1,6 @@
 package com.Javiergg.SimuladorVida;
 
+import com.Javiergg.SimuladorVida.Eventos.ClickSign;
 import com.Javiergg.SimuladorVida.comands.TransacctionCommand;
 import com.Javiergg.SimuladorVida.comands.reload;
 import com.Javiergg.SimuladorVida.core.ConexionBD;
@@ -7,6 +8,7 @@ import com.Javiergg.SimuladorVida.core.Item;
 import com.Javiergg.SimuladorVida.core.DatosArchivo;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -59,6 +61,7 @@ public class Principal extends JavaPlugin {
 
     public void registerEvents() {
         PluginManager pm = Bukkit.getServer().getPluginManager();
+        pm.registerEvents(new ClickSign(),this);
     }
 
     public void registerConfig() {
