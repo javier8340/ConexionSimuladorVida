@@ -43,16 +43,6 @@ public class Principal extends JavaPlugin {
         conexion = new DatosArchivo(file);
 
 
-        boolean primer = getConfig().getBoolean("CreateDB");
-        ConexionBD conn = new ConexionBD();
-        try {
-            conn.createDB();
-            getConfig().set("CreateDB", false);
-            saveConfig();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-
     }
 
     public void recarga(){
