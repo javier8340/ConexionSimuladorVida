@@ -37,4 +37,8 @@ public class Item {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String toString(){
+        return this.nombre +" - "+ this.tipo + " - " + this.coste;
+    }
 }

@@ -1,6 +1,8 @@
 package com.Javiergg.SimuladorVida;
 
 import com.Javiergg.SimuladorVida.comands.TransacctionCommand;
+import com.Javiergg.SimuladorVida.comands.reload;
+import com.Javiergg.SimuladorVida.core.ConexionBD;
 import com.Javiergg.SimuladorVida.core.Item;
 import com.Javiergg.SimuladorVida.core.DatosArchivo;
 import org.bukkit.Bukkit;
@@ -9,6 +11,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Principal extends JavaPlugin {
@@ -34,13 +37,24 @@ public class Principal extends JavaPlugin {
 
         FileConfiguration file = getConfig();
         conexion = new DatosArchivo(file);
-        System.out.println("asdd");
 
+
+        boolean primer = getConfig().getBoolean("CreateDB");
+        ConexionBD conn = new ConexionBD();
+        try {
+            conn.createDB();
+            getConfig().set("CreateDB", false);
+            saveConfig();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
 
     }
 
     public void registerCommands(){
+
         this.getCommand("transaccion").setExecutor(new TransacctionCommand());
+        this.getCommand("recarga").setExecutor(new reload());
     }
 
     public void registerEvents() {

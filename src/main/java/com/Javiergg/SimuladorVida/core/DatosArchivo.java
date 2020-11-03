@@ -40,7 +40,10 @@ public class DatosArchivo {
             String nombre = (String) items.get(i);
             i++;
             int valor = (int) items.get(i);
-            Principal.get().items.add(new Item(tipo,nombre,valor));
+            Item iy = new Item(tipo,nombre,valor);
+            System.out.println(iy);
+
+            Principal.get().items.add(iy);
         }
 
     }

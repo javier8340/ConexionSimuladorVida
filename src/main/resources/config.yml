@@ -13,7 +13,7 @@ datosConexion:
   #url =  + hostname + : + port + / + database + ?useSSL=false
   username: root
   password: 
-
+  CreateDB: false
 
 
 items:
