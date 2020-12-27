@@ -19,6 +19,7 @@ public class ClickSign implements Listener {
              mat = event.getClickedBlock().getType();
         }catch(Exception e){
              mat = Material.AIR;
+             Material a = Material.STRIPPED_ACACIA_LOG;
         }
         if (mat.equals(Material.ACACIA_SIGN) || mat.equals(Material.SPRUCE_SIGN) || mat.equals(Material.BIRCH_SIGN) ||
                 mat.equals(Material.CRIMSON_SIGN) || mat.equals(Material.DARK_OAK_SIGN) || mat.equals(Material.JUNGLE_SIGN)
@@ -33,3 +34,4 @@ public class ClickSign implements Listener {
         }
     }
 }
+

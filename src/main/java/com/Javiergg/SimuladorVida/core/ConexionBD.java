@@ -11,16 +11,14 @@ public class ConexionBD {
 
     private Connection conexion;
 
-    public ConexionBD(){
+    public ConexionBD() throws ClassNotFoundException, SQLException{
         DatosArchivo datosConexion = Principal.get().conexion;
         this.conexion = null;
-        try {
-            Class.forName(datosConexion.getDriver());
-            this.conexion = DriverManager.getConnection(datosConexion.getUrl(), datosConexion.getUsername(), datosConexion.getPass());
-        } catch (ClassNotFoundException | SQLException e) {
-//            e.printStackTrace();
+        Class.forName(datosConexion.getDriver());
+        this.conexion = DriverManager.getConnection(datosConexion.getUrl(), datosConexion.getUsername(), datosConexion.getPass());
+        if (this.conexion == null){
+            throw new SQLException("Error en bd");
         }
-
     }
 
     /**

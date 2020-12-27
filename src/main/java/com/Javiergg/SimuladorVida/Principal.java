@@ -1,21 +1,23 @@
 package com.Javiergg.SimuladorVida;
 
 import com.Javiergg.SimuladorVida.Eventos.ClickSign;
-import com.Javiergg.SimuladorVida.comands.TransacctionCommand;
+import com.Javiergg.SimuladorVida.comands.TransactionCommand;
 import com.Javiergg.SimuladorVida.comands.reload;
-import com.Javiergg.SimuladorVida.core.ConexionBD;
 import com.Javiergg.SimuladorVida.core.Item;
 import com.Javiergg.SimuladorVida.core.DatosArchivo;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
 
 public class Principal extends JavaPlugin {
 
@@ -46,6 +48,11 @@ public class Principal extends JavaPlugin {
     }
 
     public void recarga(){
+        if (!Bukkit.getPluginManager().isPluginEnabled(this)){
+            Bukkit.getPluginManager().enablePlugin(this);
+            Bukkit.getLogger().log(Level.INFO, "Reiniciando el Plugin");
+        }
+
         items = new ArrayList<>();
         File config = new File(this.getDataFolder(), "config.yml");
         rutaConfig = config.getPath();
@@ -60,7 +67,7 @@ public class Principal extends JavaPlugin {
     }
     public void registerCommands(){
 
-        this.getCommand("transaccion").setExecutor(new TransacctionCommand());
+        this.getCommand("transaccion").setExecutor(new TransactionCommand());
         this.getCommand("recarga").setExecutor(new reload());
     }
 
@@ -76,6 +83,16 @@ public class Principal extends JavaPlugin {
             this.getConfig().options().copyDefaults(true);
             saveConfig();
         }
+    }
+
+    public void disable(){
+        this.getCommand("transaccion").setExecutor(new CommandExecutor() {
+            @Override
+            public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+                commandSender.sendMessage(ChatColor.GRAY +"El plugin esta inactivo");
+                return true;
+            }
+        });
     }
 
 

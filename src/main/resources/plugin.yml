@@ -1,16 +1,22 @@
 
-version: 0.3
+version: 0.4
 name: SimuladorVida
 main: com.Javiergg.SimuladorVida.Principal
 author: javiergg
 desription: Comunica recursos entre Minecraft Y Simulador de vida
-api-version: 1.16
+api-version: 1.14
 commands:
 
   transaccion:
     description: Con el item en la mano puedes transferirlo a SDV
   recarga:
     description: recarga el plugin
+
+
+permissions:
+  SimuladorVida.recarga:
+    description: Permiso para recargar el plugin
+
 
 
 

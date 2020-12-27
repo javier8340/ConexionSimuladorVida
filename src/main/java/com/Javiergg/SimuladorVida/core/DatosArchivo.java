@@ -39,11 +39,12 @@ public class DatosArchivo {
         for (int i=0;i<items.size();i++){
             String nombre = (String) items.get(i);
             i++;
-            int valor = (int) items.get(i);
-            Item iy = new Item(tipo,nombre,valor);
-            System.out.println(iy);
+            if (i<items.size()){
+                int valor = (int) items.get(i);
+                Item iy = new Item(tipo,nombre,valor);
+                Principal.get().items.add(iy);
+            }
 
-            Principal.get().items.add(iy);
         }
 
     }

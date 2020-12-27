@@ -18,16 +18,94 @@ datosConexion:
 
 items:
   madera:
-    - ACACIA_LOG
-    - 10
+    - OAK_LOG
+    - 1
+    - SPRUCE_LOG
+    - 1
     - BIRCH_LOG
-    - 20
+    - 1
+    - JUNGLE_LOG
+    - 1
+    - ACACIA_LOG
+    - 1
+    - DARK_OAK_LOG
+    - 1
+    - CRIMSON_STEM
+    - 1
+    - WARPED_STEM
+    - 1
+    - STRIPPED_OAK_LOG
+    - 1
+    - STRIPPED_SPRUCE_LOG
+    - 1
+    - STRIPPED_BIRCH_LOG
+    - 1
+    - STRIPPED_JUNGLE_LOG
+    - 1
+    - STRIPPED_ACACIA_LOG
+    - 1
+    - STRIPPED_DARK_OAK_LOG
+    - 1
+    - STRIPPED_CRIMSON_STEM
+    - 1
+    - STRIPPED_WARPED_STEM
+    - 1
+    - OAK_PLANKS
+    - 1
+    - SPRUCE_PLANKS
+    - 1
+    - BIRCH_PLANKS
+    - 1
+    - JUNGLE_PLANKS
+    - 1
+    - ACACIA_PLANKS
+    - 1
+    - DARK_OAK_PLANKS
+    - 1
+    - CRIMSON_PLANKS
+    - 1
+    - WARPED_PLANKS
+    - 1
+
   tela:
     - STRING
-    - 20
+    - 1
+    - YELLOW_WOOL
+    - 1
+    - WHITE_WOOL
+    - 1
+    - RED_WOOL
+    - 1
+    - PURPLE_WOOL
+    - 1
+    - PINK_WOOL
+    - 1
+    - ORANGE_WOOL
+    - 1
+    - MAGENTA_WOOL
+    - 1
+    - LIME_WOOL
+    - 1
+    - LIGHT_GRAY_WOOL
+    - 1
+    - LIGHT_BLUE_WOOL
+    - 1
+    - GREEN_WOOL
+    - 1
+    - CYAN_WOOL
+    - 1
+    - BROWN_WOOL
+    - 1
+    - BLUE_WOOL
+    - 1
+    - BLACK_WOOL
+    - 1
   piedra:
     - STONE
-    - 15
+    - 1
+    - COBBLESTONE
+    - 1
+    -
   agua:
     - WATER_BUCKET
     - 5
@@ -36,6 +114,38 @@ items:
     - 200
   comida:
     - APPLE
+    - 1
+    - CARROT
+    - 1
+    - GOLDEN_CARROT
+    - 1
+    - GOLDEN_APPLE
+    - 1
+    - ENCHANTED_GOLDEN_APPLE
+    - 1
+    - COOKED_BEEF
+    - 1
+    - COOKED_PORKCHOP
+    - 1
+    - COOKED_MUTTON
+    - 1
+    - COOKED_SALMON
+    - 1
+    - SPIDER_EYE
+    - 1
+    - BAKED_POTATO
+    - 1
+    - COOKED_CHICKEN
+    - 1
+    - COOKED_RABBIT
+    - 1
+    - RABBIT_STEW
+    - 1
+    - SUSPICIOUS_STEW
+    - 1
+    - MUSHROOM_STEW
+    - 1
+    - BREAD
     - 1
 
 
